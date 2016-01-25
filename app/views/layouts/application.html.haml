@@ -1,0 +1,243 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title Online Catering
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    %link{:href => "http://code.jquery.com/ui/1.11.1/themes/smoothness/jquery-ui.css", :rel => "stylesheet", :type => "text/css"}/
+    %link{:href => "https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,200,200italic,300,300italic,400italic,600,600italic,700,700italic,900,900italic&subset=latin,latin-ext", :rel => "stylesheet", :type => "text/css"}/
+    %link{:href => "https://fonts.googleapis.com/css?family=Raleway:400,100,200,300,500,600,700,900,800", :rel => "stylesheet", :type => "text/css"}/
+    %script{:src => "http://code.jquery.com/ui/1.11.1/jquery-ui.js"}
+    = csrf_meta_tags
+  %body
+    /
+      \==========================
+      SCROLL TOP - START
+      \===========================
+    #scrolltop.hidden-xs
+      %i.fa.fa-angle-up
+    /
+      \==========================
+      SCROLL TOP - END
+      \===========================
+    #page-wrapper
+      / PAGE - START
+      /
+        \==========================
+        HEADER - START
+        \===========================
+      .top-header.hidden-xs
+        .container
+          .row
+            .col-sm-5
+              %ul.list-inline.contacts
+                %li
+                  %i.fa.fa-envelope
+                  support@onlinecatering.es
+                %li
+                  %i.fa.fa-phone
+                  754 213 456
+            .col-sm-7.text-right
+      %header.navbar.navbar-default.navbar-static-top
+        .container
+          .navbar-header
+            %a.navbar-brand{:href => "index.html"}
+              %span> e
+              Catering
+            %button.navbar-toggle{"data-target" => ".navbar-collapse", "data-toggle" => "collapse", :type => "button"}
+              %i.fa.fa-bars
+          .navbar-collapse.collapse
+            %p.navbar-text.hidden-xs.hidden-sm The easiest way to cater
+            %ul.nav.navbar-nav.navbar-right
+              %li.dropdown
+                = link_to "Search", search_path
+              %li.dropdown.megamenu
+                %a{"data-close-others" => "true", "data-delay" => "300", "data-hover" => "dropdown", "data-toggle" => "dropdown", :href => "#"} Vendors
+              %li.dropdown.megamenu
+                %a.dropdown-toggle{"data-close-others" => "true", "data-delay" => "300", "data-hover" => "dropdown", "data-toggle" => "dropdown", :href => "#"} My Account
+                %ul.dropdown-menu
+                  %li.col-sm-12
+                    %ul.list-unstyled
+                      %li
+                        %a{:href => "my-account.html"} Account Details
+                      %li
+                        = link_to "Orders", customers_orders_path
+                      %li
+                        %a{:href => "address.html"} Addresses
+                      %li
+                        %a{:href => "signup.html"} Cards
+                      %li
+                        %a{:href => "lost-password.html"} Password
+                      %li
+                        = link_to "Logout", destroy_vendor_session_path, method: :delete
+              %li.dropdown.navbar-cart.hidden-xs
+                %a.dropdown-toggle{"data-close-others" => "true", "data-delay" => "300", "data-hover" => "dropdown", "data-toggle" => "dropdown", :href => "#"}
+                  %i.fa.fa-shopping-cart
+                %ul.dropdown-menu
+                  / CART ITEM - START
+                  %li
+                    .row
+                      .col-sm-3
+                        %img.img-responsive{:alt => "", :src => "assets/images/products/product-1.jpg"}/
+                      .col-sm-9
+                        %h4
+                          %a{:href => "single-product.html"} Fusce Aliquam
+                        %p 1x - $20.00
+                        %a.remove{:href => "#"}
+                          %i.fa.fa-times-circle
+                  / CART ITEM - END
+                  / CART ITEM - START
+                  %li
+                    .row
+                      .col-sm-3
+                        %img.img-responsive{:alt => "", :src => "assets/images/products/product-2.jpg"}/
+                      .col-sm-9
+                        %h4
+                          %a{:href => "single-product.html"} Fusce Aliquam
+                        %p 1x - $20.00
+                        %a.remove{:href => "#"}
+                          %i.fa.fa-times-circle
+                  / CART ITEM - END
+                  / CART ITEM - START
+                  %li
+                    .row
+                      .col-sm-3
+                        %img.img-responsive{:alt => "", :src => "assets/images/products/product-3.jpg"}/
+                      .col-sm-9
+                        %h4
+                          %a{:href => "single-product.html"} Fusce Aliquam
+                        %p 1x - $20.00
+                        %a.remove{:href => "#"}
+                          %i.fa.fa-times-circle
+                  / CART ITEM - END
+                  / CART ITEM - START
+                  %li
+                    .row
+                      .col-sm-6
+                        %a.btn.btn-primary.btn-block{:href => "cart.html"} View Cart
+                      .col-sm-6
+                        %a.btn.btn-primary.btn-block{:href => "checkout.html"} Checkout
+                  / CART ITEM - END
+              %li.dropdown.navbar-search.hidden-xs
+                %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+                  %i.fa.fa-search
+                %ul.dropdown-menu
+                  %li
+                    %form
+                      .input-group.input-group-lg
+                        %input.form-control{:placeholder => "Search ...", :type => "email"}/
+                        %span.input-group-btn
+                          %button.btn.btn-primary{:type => "button"} Search
+      /
+        \==========================
+        HEADER - END
+        \===========================
+      = yield
+      /
+        \==========================
+        NEWSLETTER - START
+        \===========================
+      %section.separator.separator-newsletter
+        .container
+          .newsletter-left
+            .newsletter-badge
+              %span Subsribe &amp; Get
+              %span.price $15
+              %span discount
+          .newsletter-right
+            .row
+              .col-sm-6
+                .newsletter-body
+                  %h3 Newsletter
+                  %p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              .col-sm-6
+                %form
+                  .input-group.input-group-lg
+                    %input.form-control{:placeholder => "Enter email address", :type => "email"}/
+                    %span.input-group-btn
+                      %button.btn.btn-primary{:type => "button"} Sign Up
+      /
+        \==========================
+        NEWSLETTER - END
+        \===========================
+      /
+        \==========================
+        FOOTER - START
+        \===========================
+      %footer.navbar.navbar-default
+        .container
+          .row
+            .col-sm-3.col-xs-6
+              .footer-widget.footer-widget-contacts
+                %h4 Contacts
+                %ul.list-unstyled
+                  %li
+                    %i.fa.fa-envelope>
+                    support@onlinecatering.es
+                  %li
+                    %i.fa.fa-phone
+                    754 213 456
+                  %li
+                    %i.fa.fa-map-marker
+                    40°44'00.9"N 73°59'43.4"W
+                  %li.social
+                    %a{:href => "#"}
+                      %i.fa.fa-facebook
+                    %a{:href => "#"}
+                      %i.fa.fa-twitter
+                    %a{:href => "#"}
+                      %i.fa.fa-instagram
+                    %a{:href => "#"}
+                      %i.fa.fa-linkedin
+                    %a{:href => "#"}
+                      %i.fa.fa-tumblr
+            .col-sm-3.col-xs-6
+              .footer-widget.footer-widget-links
+                %h4 Information
+                %ul.list-unstyled
+                  %li
+                    %a{:href => "about-shop.html"} About Shop
+                  %li
+                    %a{:href => "stores.html"} Our Stores
+                  %li
+                    %a{:href => "terms-conditions.html"} Terms &amp; Conditions
+                  %li
+                    %a{:href => "privacy-policy.html"} Privacy Policy
+                  %li
+                    %a{:href => "faq.html"} FAQ
+                  %li
+                    %a{:href => "my-account.html"} My account
+            .col-sm-3.col-xs-6
+              .footer-widget.footer-widget-twitter
+                %h4 Recent tweets
+                #twitter-wrapper
+            .col-sm-3.col-xs-6
+              .footer-widget.footer-widget-facebook
+                %h4 Facebook Page
+
+          .footer-bottom
+            .row
+              .col-sm-6
+                %p.copyright © Online Catering 2016 All right reserved.
+                %p.copyright
+                  Designed by
+                  %a{:href => "http://onlinecatering.es/", :target => "_blank"} Online Catering.
+              .col-sm-6
+                %ul.list-inline.payment-methods
+                  %li
+                    %i.fa.fa-cc-amex
+                  %li
+                    %i.fa.fa-cc-diners-club
+                  %li
+                    %i.fa.fa-cc-discover
+                  %li
+                    %i.fa.fa-cc-jcb
+                  %li
+                    %i.fa.fa-cc-mastercard
+                  %li
+                    %i.fa.fa-cc-paypal
+                  %li
+                    %i.fa.fa-cc-stripe
+                  %li
+                    %i.fa.fa-cc-visa

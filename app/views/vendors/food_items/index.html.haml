@@ -1,0 +1,167 @@
+%h1 Listing food_items
+
+%table
+  %thead
+    %tr
+      %th
+      %th
+      %th
+
+  %tbody
+    - @food_items.each do |food_item|
+      %tr
+        %td= link_to 'Show', food_item
+        %td= link_to 'Edit', edit_vendors_food_item_path(food_item)
+        %td= link_to 'Destroy', food_item, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Fooditem', new_vendors_food_item_path
+
+%section.content.account
+  .container
+    .row
+      .col-sm-3
+        %aside.sidebar
+          / WIDGET:CATEGORIES - START
+          .widget.widget-navigation
+            %ul.nav.nav-pills.nav-stacked
+              %li
+                %a{:href => "my-account.html"} Account Dashboard
+              %li
+                %a{:href => "profile.html"} Personal Infromation
+              %li
+                %a{:href => "address.html"} My Address
+              %li.active
+                %a{:href => "orders.html"} My Orders
+              %li
+                %a{:href => "wishlist.html"} Wishlist
+              %li
+                %a{:href => "index.html"} Back to Homepage
+      .col-sm-9
+        %article.account-content
+          .alert.alert-warning.alert-dismissible{:role => "alert"}
+            %button.close{"aria-label" => "Close", "data-dismiss" => "alert", :type => "button"}
+              %i.fa.fa-times
+            %strong Warning!
+            This order is unpaid.
+          %h3 Order #124321
+          .order-meta
+            .row
+              .col-xs-4
+                %span.label.label-lg.label-warning.order-status Pending Payment
+              .col-xs-8
+                %ul.list-inline.order-action
+                  %li
+                    %a.btn.btn-primary.btn-sm{:href => "#"} Print
+                  %li
+                    %a.btn.btn-primary.btn-sm{:href => "#"} Save to PDF
+                  %li
+                    %a.btn.btn-primary.btn-sm{:href => "#"} Cancel Order
+          .row
+            .col-sm-6
+              .box
+                %h4 Billing Address
+                %ul.list-unstyled
+                  %li
+                    %b John Doe
+                  %li 17 Boulevard des Invalides
+                  %li 75007 Paris
+                  %li France
+            .col-sm-6
+              .box
+                %h4 Shipping Address
+                %ul.list-unstyled
+                  %li
+                    %b John Doe
+                  %li 17 Boulevard des Invalides
+                  %li 75007 Paris
+                  %li France
+          .row
+            .col-sm-6
+              .box
+                %h4 Payment Method
+                %ul.list-unstyled
+                  %li Credit Card - VISA
+              .box
+                %h4 Shipping Method
+                %ul.list-unstyled
+                  %li Post Air Mail
+            .col-sm-6
+              .box
+                %h4 Order Details
+                %ul.list-unstyled
+                  %li
+                    %b> Email:
+                    johndoe@umarket.com
+                  %li
+                    %b> Phone:
+                    +420 123 456 789
+                %h5 Addition information:
+                %p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut feugiat mauris eget magna egestas porta. Curabitur sagittis sagittis neque rutrum congue.
+          .products-order
+            .table-responsive
+              %table.table.table-products
+                %thead
+                  %tr
+                    %th
+                    %th Product
+                    %th Unit Price
+                    %th Quantity
+                    %th Subtotal
+                %tbody
+                  %tr
+                    %td.col-xs-1
+                      %img.img-responsive{:alt => "", :src => "assets/images/products/product-1.jpg"}/
+                    %td.col-xs-4.col-md-5
+                      %h4
+                        %a{:href => "single-product.html"} Fusce Aliquam
+                        %small M, Black, Esprit
+                    %td.col-xs-2.text-center
+                      %span $30
+                    %td.col-xs-2.col-md-1.text-center
+                      %span
+                        %b 2 items
+                    %td.col-xs-2.text-center
+                      %span
+                        %b $60
+                  %tr
+                    %td.col-xs-1
+                      %img.img-responsive{:alt => "", :src => "assets/images/products/product-2.jpg"}/
+                    %td.col-xs-4.col-md-5
+                      %h4
+                        %a{:href => "single-product.html"} Fusce Aliquam
+                        %small M, Black, Esprit
+                    %td.col-xs-2.text-center
+                      %span $80
+                    %td.col-xs-2.col-md-1.text-center
+                      %span
+                        %b 2 items
+                    %td.col-xs-2.text-center
+                      %span
+                        %b $160
+                  %tr
+                    %td.col-xs-1
+                      %img.img-responsive{:alt => "", :src => "assets/images/products/product-3.jpg"}/
+                    %td.col-xs-4.col-md-5
+                      %h4
+                        %a{:href => "single-product.html"} Fusce Aliquam
+                        %small M, Black, Esprit
+                    %td.col-xs-2.text-center
+                      %span $95
+                    %td.col-xs-2.col-md-1.text-center
+                      %span
+                        %b 1 item
+                    %td.col-xs-2.text-center
+                      %span
+                        %b $95
+            %ul.list-unstyled.order-total
+              %li
+                Total products
+                %span $315.00
+              %li
+                Shipping
+                %span $15.00
+              %li
+                Subtotal
+                %span.total $330.00
