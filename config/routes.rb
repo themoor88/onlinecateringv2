@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   get "/faq" => 'pages#faq'
 
 
-  resources :food_items, only: [:show]
+  get "/food-items/:id" => 'food_items#show', as: 'food_item'
   get "/search" => 'food_items#index'
 
   resources :vendors, only: [:index, :show]
@@ -28,7 +28,7 @@ Rails.application.routes.draw do
     end
 
     authenticated :vendor do
-      root to: "pages#order", as: 'authenticated_vendor_root'
+      root to: "pages#search", as: 'authenticated_vendor_root'
     end
   end
 
@@ -39,7 +39,7 @@ Rails.application.routes.draw do
     end
 
     authenticated :customer do
-      root to: "pages#order", as: 'authenticated_customer_root'
+      root to: "pages#search", as: 'authenticated_customer_root'
     end
   end
 end

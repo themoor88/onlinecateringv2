@@ -52,83 +52,34 @@
             %ul.nav.navbar-nav.navbar-right
               %li.dropdown
                 = link_to "Search", search_path
-              %li.dropdown.megamenu
-                %a{"data-close-others" => "true", "data-delay" => "300", "data-hover" => "dropdown", "data-toggle" => "dropdown", :href => "#"} Vendors
-              %li.dropdown.megamenu
-                %a.dropdown-toggle{"data-close-others" => "true", "data-delay" => "300", "data-hover" => "dropdown", "data-toggle" => "dropdown", :href => "#"} My Account
-                %ul.dropdown-menu
-                  %li.col-sm-12
-                    %ul.list-unstyled
-                      %li
-                        %a{:href => "my-account.html"} Account Details
-                      %li
-                        = link_to "Orders", customers_orders_path
-                      %li
-                        %a{:href => "address.html"} Addresses
-                      %li
-                        %a{:href => "signup.html"} Cards
-                      %li
-                        %a{:href => "lost-password.html"} Password
-                      %li
-                        = link_to "Logout", destroy_vendor_session_path, method: :delete
-              %li.dropdown.navbar-cart.hidden-xs
-                %a.dropdown-toggle{"data-close-others" => "true", "data-delay" => "300", "data-hover" => "dropdown", "data-toggle" => "dropdown", :href => "#"}
-                  %i.fa.fa-shopping-cart
-                %ul.dropdown-menu
-                  / CART ITEM - START
-                  %li
-                    .row
-                      .col-sm-3
-                        %img.img-responsive{:alt => "", :src => "assets/images/products/product-1.jpg"}/
-                      .col-sm-9
-                        %h4
-                          %a{:href => "single-product.html"} Fusce Aliquam
-                        %p 1x - $20.00
-                        %a.remove{:href => "#"}
-                          %i.fa.fa-times-circle
-                  / CART ITEM - END
-                  / CART ITEM - START
-                  %li
-                    .row
-                      .col-sm-3
-                        %img.img-responsive{:alt => "", :src => "assets/images/products/product-2.jpg"}/
-                      .col-sm-9
-                        %h4
-                          %a{:href => "single-product.html"} Fusce Aliquam
-                        %p 1x - $20.00
-                        %a.remove{:href => "#"}
-                          %i.fa.fa-times-circle
-                  / CART ITEM - END
-                  / CART ITEM - START
-                  %li
-                    .row
-                      .col-sm-3
-                        %img.img-responsive{:alt => "", :src => "assets/images/products/product-3.jpg"}/
-                      .col-sm-9
-                        %h4
-                          %a{:href => "single-product.html"} Fusce Aliquam
-                        %p 1x - $20.00
-                        %a.remove{:href => "#"}
-                          %i.fa.fa-times-circle
-                  / CART ITEM - END
-                  / CART ITEM - START
-                  %li
-                    .row
-                      .col-sm-6
-                        %a.btn.btn-primary.btn-block{:href => "cart.html"} View Cart
-                      .col-sm-6
-                        %a.btn.btn-primary.btn-block{:href => "checkout.html"} Checkout
-                  / CART ITEM - END
-              %li.dropdown.navbar-search.hidden-xs
-                %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
-                  %i.fa.fa-search
-                %ul.dropdown-menu
-                  %li
-                    %form
-                      .input-group.input-group-lg
-                        %input.form-control{:placeholder => "Search ...", :type => "email"}/
-                        %span.input-group-btn
-                          %button.btn.btn-primary{:type => "button"} Search
+              - if customer_signed_in?
+                %li.dropdown
+                  = link_to "Vendors", how_it_works_path
+                %li.dropdown.megamenu
+                  %a.dropdown-toggle{"data-close-others" => "true", "data-delay" => "300", "data-hover" => "dropdown", "data-toggle" => "dropdown", :href => "#"} My Account
+                  %ul.dropdown-menu
+                    %li.col-sm-12
+                      %ul.list-unstyled
+                        %li
+                          %a{:href => "my-account.html"} Account Details
+                        %li
+                          = link_to "Orders", customers_orders_path
+                        %li
+                          %a{:href => "address.html"} Addresses
+                        %li
+                          %a{:href => "signup.html"} Cards
+                        %li
+                          %a{:href => "lost-password.html"} Password
+                        %li
+                          = link_to "Logout", destroy_vendor_session_path, method: :delete
+              - elsif
+                %li.dropdown
+                  = link_to "How It Works", how_it_works_path
+                %li.dropdown
+                  = link_to "Sell Food With Us", how_it_works_path
+                = link_to "SIGN UP", new_customer_registration_path, class: "btn btn-primary btn-sm"
+                = link_to "LOG IN", new_customer_session_path, class: "btn btn-primary btn-sm"
+
       /
         \==========================
         HEADER - END
