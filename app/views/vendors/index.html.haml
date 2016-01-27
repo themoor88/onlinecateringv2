@@ -1,17 +1,1 @@
-%h1 Listing vendors
 
-%table
-  %thead
-    %tr
-      %th
-      %th
-      %th
-
-  %tbody
-    - @vendors.each do |vendor|
-      %tr
-        %td= link_to 'Show', vendor
-
-%br
-
-= link_to 'New Vendor', new_vendor_path
