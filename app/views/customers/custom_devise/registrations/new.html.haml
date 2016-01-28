@@ -19,3 +19,51 @@
   .actions
     = f.submit "Sign up"
 = render "customers/custom_devise/shared/links"
+
+/
+  \==========================
+  ACCOUNT - START
+  \===========================
+%section.content.account
+  .container
+    .row
+      .col-sm-10.col-sm-offset-1.col-md-8.col-md-offset-2.col-lg-6.col-lg-offset-3
+        .login-form-wrapper
+          = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+            %h3 Sign Up
+            .form-group
+              = f.label :email
+              %br/
+              = f.email_field :email, autofocus: true
+            .form-group
+              = f.label :password
+              - if @minimum_password_length
+                %em
+                  (#{@minimum_password_length} characters minimum)
+              %br/
+              = f.password_field :password, autocomplete: "off"
+            .form-group
+              = f.label :password_confirmation
+              %br/
+              = f.password_field :password_confirmation, autocomplete: "off"
+            .form-group
+              .checkbox
+                %input#signin-remember{:type => "checkbox"}/
+                %label{:for => "signin-remember"} Remember me
+            %button.btn.btn-primary.btn-lg.btn-block{:type => "submit"} Submit
+          .row
+            .col-xs-6
+              %a.btn.btn-brand.btn-facebook{:href => ""}
+                %i.fa.fa-facebook>
+                Sign in with Facebook
+            .col-xs-6
+              %a.btn.btn-brand.btn-google-plus{:href => ""}
+                %i.fa.fa-google-plus>
+                Sign in with Google Plus
+        %p.form-text
+          Did you
+          %a{:href => "lost-password.html"} forgot your password?
+/
+  \==========================
+  ACCOUNT - END
+  \===========================
