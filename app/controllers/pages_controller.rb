@@ -5,6 +5,12 @@ class PagesController < ApplicationController
   def how_it_works
   end
 
+  def about_us
+  end
+
+  def sell_food
+  end
+
   def privacy_policy
   end
 

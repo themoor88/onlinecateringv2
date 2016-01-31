@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
   root 'pages#home'
   get "/how-it-works" => 'pages#how_it_works'
+  get "/sell-food-with-us" => 'pages#sell_food', as: 'sell_food'
+  get "/about-us" => 'pages#about_us'
   get "/privacy-policy" => 'pages#privacy_policy'
-  get "/terms-and-conditions" => 'pages#terms_and_conditions'
+  get "/terms-and-conditions" => 'pages#terms_and_conditions', as: 'terms'
   get "/faq" => 'pages#faq'
 
 

@@ -42,7 +42,7 @@
       %header.navbar.navbar-default.navbar-static-top
         .container
           .navbar-header
-            %a.navbar-brand{:href => "index.html"}
+            = link_to root_path, class: 'navbar-brand' do
               %span> e
               Catering
             %button.navbar-toggle{"data-target" => ".navbar-collapse", "data-toggle" => "collapse", :type => "button"}
@@ -76,9 +76,9 @@
                 %li.dropdown
                   = link_to "How It Works", how_it_works_path
                 %li.dropdown
-                  = link_to "Sell Food With Us", how_it_works_path
-                = link_to "SIGN UP", new_customer_registration_path, class: "btn btn-primary btn-sm"
-                = link_to "LOG IN", new_customer_session_path, class: "btn btn-primary btn-sm"
+                  = link_to "Sell Food With Us", sell_food_path
+                = link_to "SIGN UP", new_customer_registration_path, class: "btn btn-primary btn-sm user-button"
+                = link_to "LOG IN", new_customer_session_path, class: "btn btn-primary btn-sm user-button"
 
       /
         \==========================
@@ -148,17 +148,13 @@
                 %h4 Information
                 %ul.list-unstyled
                   %li
-                    %a{:href => "about-shop.html"} About Shop
+                    = link_to "About Us", about_us_path
                   %li
-                    %a{:href => "stores.html"} Our Stores
+                    = link_to "Terms & Conditions", terms_path
                   %li
-                    %a{:href => "terms-conditions.html"} Terms &amp; Conditions
+                    = link_to "Privacy Policy", privacy_policy_path
                   %li
-                    %a{:href => "privacy-policy.html"} Privacy Policy
-                  %li
-                    %a{:href => "faq.html"} FAQ
-                  %li
-                    %a{:href => "my-account.html"} My account
+                    = link_to "FAQ", faq_path
             .col-sm-3.col-xs-6
               .footer-widget.footer-widget-twitter
                 %h4 Recent tweets
