@@ -50,11 +50,33 @@
           .navbar-collapse.collapse
             %p.navbar-text.hidden-xs.hidden-sm The easiest way to cater
             %ul.nav.navbar-nav.navbar-right
-              %li.dropdown
-                = link_to "Search", search_path
+
               - if customer_signed_in?
                 %li.dropdown
-                  = link_to "Vendors", how_it_works_path
+                  = link_to "Search", search_path
+                  %li.dropdown
+                    = link_to "Vendors", customers_vendors_path
+                  %li.dropdown.megamenu
+                    %a.dropdown-toggle{"data-close-others" => "true", "data-delay" => "300", "data-hover" => "dropdown", "data-toggle" => "dropdown", :href => "#"} My Account
+                    %ul.dropdown-menu
+                      %li.col-sm-12
+                        %ul.list-unstyled
+                          %li
+                            %a{:href => "my-account.html"} Account Details
+                          %li
+                            = link_to "Orders", customers_orders_path
+                          %li
+                            = link_to "Addresses", customers_addresses_path
+                          %li
+                            %a{:href => "signup.html"} Cards
+                          %li
+                            %a{:href => "lost-password.html"} Password
+                          %li
+                            = link_to "Logout", destroy_customer_session_path, method: :delete
+
+              - elsif vendor_signed_in?
+                %li.dropdown
+                  = link_to "Vendors", customers_vendors_path
                 %li.dropdown.megamenu
                   %a.dropdown-toggle{"data-close-others" => "true", "data-delay" => "300", "data-hover" => "dropdown", "data-toggle" => "dropdown", :href => "#"} My Account
                   %ul.dropdown-menu
@@ -62,17 +84,15 @@
                       %ul.list-unstyled
                         %li
                           %a{:href => "my-account.html"} Account Details
-                        %li
-                          = link_to "Orders", customers_orders_path
-                        %li
-                          %a{:href => "address.html"} Addresses
+                        %li= link_to "Orders", vendors_orders_path
                         %li
                           %a{:href => "signup.html"} Cards
                         %li
                           %a{:href => "lost-password.html"} Password
-                        %li
-                          = link_to "Logout", destroy_vendor_session_path, method: :delete
-              - elsif
+                        %li= link_to "Logout", destroy_vendor_session_path, method: :delete
+              - else
+                %li.dropdown
+                  = link_to "Search", search_path
                 %li.dropdown
                   = link_to "How It Works", how_it_works_path
                 %li.dropdown

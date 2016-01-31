@@ -1,4 +1,4 @@
-class VendorsController < ApplicationController
+class Customers::VendorsController < Customers::BaseController
 
   # GET /index
   def index
