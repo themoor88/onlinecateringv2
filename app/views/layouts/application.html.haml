@@ -76,7 +76,9 @@
 
               - elsif vendor_signed_in?
                 %li.dropdown
-                  = link_to "Vendors", customers_vendors_path
+                  = link_to "Food Items", vendors_food_items_path
+                %li.dropdown
+                  = link_to "Orders", vendors_orders_path
                 %li.dropdown.megamenu
                   %a.dropdown-toggle{"data-close-others" => "true", "data-delay" => "300", "data-hover" => "dropdown", "data-toggle" => "dropdown", :href => "#"} My Account
                   %ul.dropdown-menu
@@ -84,7 +86,6 @@
                       %ul.list-unstyled
                         %li
                           %a{:href => "my-account.html"} Account Details
-                        %li= link_to "Orders", vendors_orders_path
                         %li
                           %a{:href => "signup.html"} Cards
                         %li
@@ -113,7 +114,7 @@
         .container
           .newsletter-left
             .newsletter-badge
-              %span Subsribe &amp; Get
+              %span Subscribe
               %span.price $15
               %span discount
           .newsletter-right

@@ -20,6 +20,7 @@ group :development, :test do
   gem 'byebug'
   gem 'quiet_assets'
   gem 'pry-rails'
+  gem 'better_errors'
 end
 
 group :development do
