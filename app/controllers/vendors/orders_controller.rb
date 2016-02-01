@@ -1,7 +1,7 @@
 class Vendors::OrdersController < Vendors::BaseController
   # GET /vendors/orders
   def index
-    @orders = current_vendor.orders
+    @orders = Order.all
   end
 
   # GET /vendors/orders/1
