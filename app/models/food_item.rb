@@ -14,6 +14,7 @@ class FoodItem < ActiveRecord::Base
 
   #------------------------------------------------------------------------------
   # Validations
+  validates_presence_of :allergy_information, :included, :description
 
   #------------------------------------------------------------------------------
   # Associations

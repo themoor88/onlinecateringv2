@@ -10,6 +10,10 @@
   %tbody
     - @food_items.each do |food_item|
       %tr
+        = food_item.allergy_information
+        = food_item.included
+        = food_item.description
+      %tr
         %td= link_to 'Show', food_item
         %td= link_to 'Edit', edit_vendors_food_item_path(food_item)
         %td= link_to 'Destroy', food_item, :method => :delete, :data => { :confirm => 'Are you sure?' }

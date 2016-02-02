@@ -10,7 +10,7 @@ class Vendors::FoodItemsController < Vendors::BaseController
 
   # GET /vendors/food_items/new
   def new
-    @food_item = FoodItem.new
+    @food_item = current_vendor.food_items.new
   end
 
   # GET /vendors/food_items/1/edit
@@ -20,7 +20,7 @@ class Vendors::FoodItemsController < Vendors::BaseController
 
   # POST /vendors/food_items
   def create
-    @food_item = FoodItem.new(food_item_params)
+    @food_item = current_vendor.food_items.new(food_item_params)
 
     respond_to do |format|
       if @food_item.save
@@ -62,6 +62,6 @@ class Vendors::FoodItemsController < Vendors::BaseController
   private
     # Never trust parameters from the scary internet, only allow the white list through.
     def food_item_params
-      params.require(:food_item).permit()
+      params.require(:food_item).permit(:description, :allergy_information, :included)
     end
 end

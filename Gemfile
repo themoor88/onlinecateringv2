@@ -15,6 +15,7 @@ gem 'bootstrap-sass'
 gem 'devise'
 gem 'font-awesome-rails'
 gem 'haml-rails'
+gem 'simple_form'
 
 group :development, :test do
   gem 'byebug'
