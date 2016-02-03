@@ -12,6 +12,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'annotate'
 gem 'bootstrap-sass'
+gem 'chronic'
 gem 'devise'
 gem 'font-awesome-rails'
 gem 'haml-rails'
