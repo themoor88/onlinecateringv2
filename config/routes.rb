@@ -41,7 +41,7 @@ Rails.application.routes.draw do
     end
 
     authenticated :vendor do
-      root to: "pages#search", as: 'authenticated_vendor_root'
+      root to: "orders#index", as: 'authenticated_vendor_root'
     end
   end
 end
