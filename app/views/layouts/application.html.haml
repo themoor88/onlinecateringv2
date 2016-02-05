@@ -68,9 +68,7 @@
                           %li
                             = link_to "Addresses", customers_addresses_path
                           %li
-                            %a{:href => "signup.html"} Cards
-                          %li
-                            %a{:href => "lost-password.html"} Password
+                            = link_to "Edit", edit_customer_registration_path
                           %li
                             = link_to "Logout", destroy_customer_session_path, method: :delete
 
