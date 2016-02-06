@@ -27,6 +27,7 @@ Rails.application.routes.draw do
       resources :addresses
       resources :orders, except: [:edit]
       resources :vendors, only: [:index, :show]
+      get "/account-details" => 'account#index'
     end
 
     authenticated :customer do
@@ -38,6 +39,7 @@ Rails.application.routes.draw do
     namespace :vendors do
       resources :food_items
       resources :orders, only: [:index, :show]
+      get "/account-details" => 'account#index'
     end
 
     authenticated :vendor do
