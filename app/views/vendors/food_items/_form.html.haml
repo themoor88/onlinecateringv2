@@ -1,18 +1,19 @@
-= simple_form_for @food_item, url: vendors_food_items_path(@food_item) do |f|
-  - if @food_item.errors.any?
-    #error_explanation
-      %h2= "#{pluralize(@food_item.errors.count, "error")} prohibited this vendors_fooditem from being saved:"
-      %ul
-        - @food_item.errors.full_messages.each do |msg|
-          %li= msg
-  .row
-    .col-md-12
-      = f.input :allergy_information, class: '',  label: "Allergy Information"
-  .row
-    .col-md-12
-      = f.input :included, class: '',  label: "Included"
-  .row
-    .col-md-6
-      = f.input :description, class: '',  label: "description"
-  .actions
-    = f.submit 'Save'
+.row
+  = simple_form_for @food_item, url: vendors_food_items_path(@food_item) do |f|
+    - if @food_item.errors.any?
+      #error_explanation
+        %h2= "#{pluralize(@food_item.errors.count, "error")} prohibited this food item from being saved:"
+        %ul
+          - @food_item.errors.full_messages.each do |msg|
+            %li= msg
+    .row
+      .col-md-6
+        = f.input :allergy_information, class: '',  label: "Allergy Information"
+    .row
+      .col-md-12
+        = f.input :included, class: '',  label: "Included"
+    .row
+      .col-md-12
+        = f.input :description, class: '',  label: "description"
+    .actions
+      = f.submit 'Save', class: 'btn btn-primary btn-lg'
