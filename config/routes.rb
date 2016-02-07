@@ -29,23 +29,13 @@ Rails.application.routes.draw do
       resources :vendors, only: [:index, :show]
       get "/account-details" => 'account#index'
     end
-
-    authenticated :customer do
-      root to: "pages#search", as: 'authenticated_customer_root'
-    end
   end
 
   devise_scope :vendor do
     namespace :vendors do
-      resources :food_items
+      resources :food_items, path: 'food-items'
       resources :orders, only: [:index, :show]
       get "/account-details" => 'account#index'
-    end
-
-    authenticated :vendor do
-      namespace :vendors do
-        root to: "orders#index", as: 'authenticated_vendor_root'
-      end
     end
   end
 end
