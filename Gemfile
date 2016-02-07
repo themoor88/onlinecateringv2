@@ -17,6 +17,7 @@ gem 'devise'
 gem 'font-awesome-rails'
 gem 'haml-rails'
 gem 'simple_form'
+gem 'rails_12factor'
 
 group :development, :test do
   gem 'byebug'
