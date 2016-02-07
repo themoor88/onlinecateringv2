@@ -13,9 +13,9 @@ default: &default
   adapter: postgresql
   encoding: unicode
   pool: 5
-  username: root
-  password: sarahalidoost
-  socket: /tmp/mysql.sock
+  # username: root
+  # password: sarahalidoost
+  # socket: /tmp/mysql.sock
 
 development:
   <<: *default
