@@ -17,6 +17,7 @@ class Order < ActiveRecord::Base
   #------------------------------------------------------------------------------
   # Associations
   belongs_to :customer
+  belongs_to :vendor
 
   #------------------------------------------------------------------------------
   # Enumerations

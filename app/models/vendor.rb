@@ -28,7 +28,7 @@ class Vendor < ActiveRecord::Base
   #------------------------------------------------------------------------------
   # Associations
   has_many :food_items
-
+  has_many :orders
   #------------------------------------------------------------------------------
   # Enumerations
 
