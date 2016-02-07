@@ -5,54 +5,9 @@
     =========================== -->
     <section class="content products">
         <div class="container">
-          <article class="product-item product-single">
-                <div class="row">
-                    <div class="col-xs-4">
-                        <div class="product-carousel-wrapper">
-                            <div id="product-carousel">
-                                <div class="item">
-                                    <%= image_tag ("example-9.jpg"), class: "img-responsive" %>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xs-8">
-                      <div class="product-body">
-                            <h3>Fusce Aliquam</h3>
-                            <span class="price">
-                                <ins><span class="amount">$30.00</span></ins>
-                            </span>
-                            <ul class="list-unstyled product-info">
-                                <li><span>ID</span>U-187423</li>
-                                <li><span>Availability</span>In Stock</li>
-                                <li><span>Brand</span>Esprit</li>
-                                <li><span>Tags</span>Dress, Black, Women</li>
-                            </ul>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut feugiat mauris eget magna egestas porta. Curabitur sagittis sagittis neque rutrum congue. Donec lobortis dui sagittis, ultrices nunc ornare, ultricies elit. Curabitur tristique felis pulvinar nibh porta. </p>
-                            <div class="product-form clearfix">
-                                <div class="row row-no-padding">
-
-                                    <div class="col-md-3 col-sm-4">
-                                        <div class="product-quantity clearfix">
-                                            <a class="btn btn-default" id="qty-minus">-</a>
-                                            <input type="text" class="form-control" id="qty" value="1">
-                                            <a class="btn btn-default" id="qty-plus">+</a>
-                                        </div>
-                                    </div>
-
-
-                                    <div class="col-md-3 col-sm-12">
-                                      <a href="" class="btn btn-primary add-to-cart"><i class="fa fa-shopping-cart"></i>ORDER NOW</a>
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </article>
 
             <div class="tabs product-tabs">
+
                 <div class="tab-content">
                   <div role="tabpanel" class="tab-pane active" id="description">
                    <h4>Etiam posuere id nulla</h4>
@@ -72,14 +27,13 @@
             </div>
 
             <div class="releated-products">
-              <h2>Related Food</h2>
+              <h2>Vendor Food Items</h2>
               <div class="row grid" id="products">
 
-                    <%= render 'food_item' %>
-                    <%= render 'food_item' %>
-                    <%= render 'food_item' %>
-                    <%= render 'food_item' %>
-
+                  <%= render 'food_item' %>
+                  <%= render 'food_item' %>
+                  <%= render 'food_item' %>
+                  <%= render 'food_item' %>
 
               </div>
             </div>
@@ -89,3 +43,4 @@
     <!-- ==========================
       PRODUCTS - END
     =========================== -->
+
