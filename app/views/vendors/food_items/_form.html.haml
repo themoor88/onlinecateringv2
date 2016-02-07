@@ -14,6 +14,7 @@
         = f.input :included, class: '',  label: "Included"
     .row
       .col-md-6
-        = f.input :description, class: '',  label: "description"
+        = f.text_area(:description, class: 'form-control',  label: "Description", size: '50x10')
+    %br
     .actions
       = f.submit 'Save', class: 'btn btn-primary btn-lg'
