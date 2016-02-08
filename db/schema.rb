@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160207170316) do
+ActiveRecord::Schema.define(version: 20160208050600) do
 
   create_table "addresses", force: :cascade do |t|
     t.string   "city",        limit: 255
@@ -40,12 +40,14 @@ ActiveRecord::Schema.define(version: 20160207170316) do
   add_index "customers", ["reset_password_token"], name: "index_customers_on_reset_password_token", unique: true, using: :btree
 
   create_table "food_items", force: :cascade do |t|
-    t.string   "description",         limit: 255
-    t.string   "allergy_information", limit: 255
-    t.string   "included",            limit: 255
+    t.text     "description",         limit: 65535
+    t.integer  "price",               limit: 4
+    t.text     "allergy_information", limit: 65535
+    t.text     "included",            limit: 65535
     t.integer  "vendor_id",           limit: 4
-    t.datetime "created_at",                      null: false
-    t.datetime "updated_at",                      null: false
+    t.datetime "created_at",                        null: false
+    t.datetime "updated_at",                        null: false
+    t.string   "title",               limit: 255
   end
 
   create_table "orders", force: :cascade do |t|

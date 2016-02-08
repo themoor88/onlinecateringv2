@@ -1,4 +1,4 @@
-.row
+.container
   = simple_form_for @food_item, url: vendors_food_items_path(@food_item) do |f|
     - if @food_item.errors.any?
       #error_explanation
@@ -8,13 +8,19 @@
             %li= msg
     .row
       .col-md-6
-        = f.input :allergy_information, class: '',  label: "Allergy Information"
+        = f.input :title, class: 'form-control',  label: "NAME"
     .row
       .col-md-6
-        = f.input :included, class: '',  label: "Included"
+        = f.input :description, class: 'form-control',  label: "DESCRIPTION OF THE FOOD ITEM", as: :text, input_html: {'rows': 10}
     .row
       .col-md-6
-        = f.text_area(:description, class: 'form-control',  label: "Description", size: '50x10')
+        = f.input :included, class: 'form-control',  label: "WHAT'S INCLUDED?", as: :text, input_html: {'rows': 10}
+    .row
+      .col-md-6
+        = f.input :allergy_information, class: 'form-control',  label: "ALLERGY INFORMATION", as: :text, input_html: {'rows': 5}
+    .row
+      .col-md-6
+        = f.input :price, class: 'form-control',  label: "PRICE"
     %br
     .actions
       = f.submit 'Save', class: 'btn btn-primary btn-lg'

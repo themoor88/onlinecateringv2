@@ -3,11 +3,14 @@
 # Table name: food_items
 #
 #  id                  :integer          not null, primary key
-#  description         :string(255)
-#  allergy_information :string(255)
-#  included            :string(255)
+#  description         :text(65535)
+#  price               :integer
+#  allergy_information :text(65535)
+#  included            :text(65535)
+#  vendor_id           :integer
 #  created_at          :datetime         not null
 #  updated_at          :datetime         not null
+#  title               :string(255)
 #
 
 require 'test_helper'
