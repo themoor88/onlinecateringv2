@@ -38,4 +38,14 @@ Rails.application.configure do
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
+
+  # Paperclip defaults using and Amazon S3 bucket for storage.
+  config.paperclip_defaults = {
+    storage: :s3,
+    s3_credentials: {
+      bucket: Figaro.env.s3_bucket_name,
+      access_key_id: Figaro.env.aws_access_key_id,
+      secret_access_key: Figaro.env.aws_secret_access_key
+    }
+  }
 end
