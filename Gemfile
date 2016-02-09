@@ -27,6 +27,7 @@ group :development, :test do
   gem 'quiet_assets'
   gem 'pry-rails'
   gem 'better_errors'
+  gem 'erb2haml'
 end
 
 group :development do

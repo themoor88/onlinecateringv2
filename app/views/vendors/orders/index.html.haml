@@ -1,0 +1,73 @@
+/
+  \==========================
+  MY ACCOUNT - START
+  \===========================
+%section.content.account
+  .container
+    .row
+      .col-sm-12
+        %article.account-content
+          %h3 My Orders
+          .table-responsive.border
+            %table.table.table-bordered
+              %tr
+                %th.col-xs-2 Order ID
+                %th.col-xs-3 Date
+                %th.col-md-1.hidden-xs.hidden-sm Items
+                %th.col-xs-2 Total Price
+                %th.col-xs-3 Status
+                %th.col-xs-1
+              %tr
+                %td
+                  %a{:href => "single-order.html"} #124321
+                %td 12th July 2015
+                %td.hidden-xs.hidden-sm 3
+                %td $265
+                %td
+                  %span.label.label-info On Hold
+                %td
+                  = link_to "Pay", vendors_order_path(1), class: "btn btn-primary btn-sm"
+              %tr
+                %td
+                  %a{:href => "single-order.html"} #124321
+                %td 12th July 2015
+                %td.hidden-xs.hidden-sm 3
+                %td $265
+                %td
+                  %span.label.label-warning Pending Payment
+                %td
+                  = link_to "Pay", vendors_order_path(1), class: "btn btn-primary btn-sm"
+              %tr
+                %td
+                  %a{:href => "single-order.html"} #124321
+                %td 12th July 2015
+                %td.hidden-xs.hidden-sm 3
+                %td $265
+                %td
+                  %span.label.label-info Processing
+                %td
+                  = link_to "Pay", vendors_order_path(1), class: "btn btn-primary btn-sm"
+              %tr
+                %td
+                  %a{:href => "single-order.html"} #124321
+                %td 12th July 2015
+                %td.hidden-xs.hidden-sm 3
+                %td $265
+                %td
+                  %span.label.label-success Completed
+                %td
+                  = link_to "Pay", vendors_order_path(1), class: "btn btn-primary btn-sm"
+              %tr
+                %td
+                  %a{:href => "single-order.html"} #124321
+                %td 12th July 2015
+                %td.hidden-xs.hidden-sm 3
+                %td $265
+                %td
+                  %span.label.label-danger Canceled
+                %td
+                  = link_to "Pay", vendors_order_path(1), class: "btn btn-primary btn-sm"
+/
+  \==========================
+  MY ACCOUNT - END
+  \===========================

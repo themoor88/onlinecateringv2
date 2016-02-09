@@ -1,0 +1,59 @@
+/
+  \==========================
+  PRODUCTS - START
+  \===========================
+%section.content.products
+  .container
+    %article.product-item.product-single
+      .row
+        .col-xs-4
+          .product-carousel-wrapper
+            #product-carousel
+              .item
+                = image_tag ("example-9.jpg"), class: "img-responsive"
+        .col-xs-8
+          .product-body
+            %h3 Fusce Aliquam
+            %span.price
+              %ins
+                %span.amount $30.00
+            %ul.list-unstyled.product-info
+              %li
+                %span> Tags
+                Dress, Black, Women
+            %p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut feugiat mauris eget magna egestas porta. Curabitur sagittis sagittis neque rutrum congue. Donec lobortis dui sagittis, ultrices nunc ornare, ultricies elit. Curabitur tristique felis pulvinar nibh porta.
+            .product-form.clearfix
+              .row.row-no-padding
+                .col-md-3.col-sm-4
+                  .product-quantity.clearfix
+                    %a#qty-minus.btn.btn-default -
+                    %input#qty.form-control{:type => "text", :value => "1"}/
+                    %a#qty-plus.btn.btn-default +
+                .col-md-3.col-sm-12
+                  %a.btn.btn-primary.add-to-cart{:href => ""}
+                    %i.fa.fa-shopping-cart>
+                    ORDER NOW
+    .tabs.product-tabs
+      .tab-content
+        #description.tab-pane.active{:role => "tabpanel"}
+          %h4 Etiam posuere id nulla
+          %p Ut arcu ipsum, cursus vitae ligula id, semper sodales mauris. Etiam posuere id nulla lacinia convallis. Sed tortor nisi, semper a auctor id, aliquet et sem. Aliquam suscipit lectus ut arcu pretium, et malesuada tortor finibus. Pellentesque sed arcu nec lectus vulputate pharetra. Vestibulum lobortis dolor massa, et tristique ex tincidunt at. Donec imperdiet elit elit, sit amet posuere dui auctor id. Nullam vel augue varius, ornare purus a, mattis diam.
+          %ul
+            %li Etiam posuere id nulla lacinia convallis
+            %li Sed tortor nisi, semper a auctor id, aliquet
+            %li Curabitur eros dui
+          %h5 Pellentesque vel felis pharetra
+          %p Interdum et malesuada fames ac ante ipsum primis in faucibus. Curabitur eros dui, viverra nec nisl quis, aliquet auctor nisi. Pellentesque vel felis pharetra, accumsan purus eu, mattis est. Aliquam tincidunt efficitur nibh nec volutpat. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla ut nisl eu nisi vestibulum consectetur. Quisque egestas dolor neque, at bibendum lorem convallis sed. Maecenas finibus metus ante, non tristique sapien sagittis id. Nam et iaculis massa. Nulla facilisi. Integer at nunc neque. Phasellus posuere et nunc ac blandit. Mauris sollicitudin, sapien vitae luctus pellentesque, risus nunc mattis purus, sed laoreet ante leo congue sem. Etiam eget nisi ipsum. Phasellus consectetur vel turpis vitae eleifend.
+          %h5 Phasellus et libero
+          %p Interdum et malesuada fames ac ante ipsum primis in faucibus. Aliquam erat volutpat. Phasellus et libero nec ligula imperdiet viverra quis et turpis. Aenean quis mattis nunc. Mauris consectetur sed eros sed convallis. Morbi non elit in est tempus scelerisque congue a purus. In eget ullamcorper magna. Nam libero turpis, ullamcorper sit amet molestie nec, cursus ac urna. Suspendisse blandit finibus est, quis pulvinar arcu pretium vel. Aenean et leo nisi. Donec at iaculis ligula. Proin condimentum lobortis ex, in congue nisi molestie eget.
+    .releated-products
+      %h2 Related Food
+      #products.row.grid
+        = render 'food_item'
+        = render 'food_item'
+        = render 'food_item'
+        = render 'food_item'
+/
+  \==========================
+  PRODUCTS - END
+  \===========================

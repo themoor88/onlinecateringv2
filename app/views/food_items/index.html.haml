@@ -1,0 +1,56 @@
+/
+  \==========================
+  PRODUCTS - START
+  \===========================
+%section.content.products
+  .container
+    %h2.hidden Products
+    .row
+      .col-sm-12
+        .products-header
+          .row
+            .col-xs-6.col-sm-4
+              %form.form-inline.products-per-page
+                .form-group
+                  %label Show:
+                .form-group
+                  %select.form-control
+                    %option 6
+                    %option{:selected => "selected"} 12
+                    %option 18
+                    %option 24
+                    %option ALL
+            .col-xs-6.col-sm-8
+              .btn-group.toggle-list-grid.hidden-xs{:role => "group"}
+                %button#toggle-grid.btn.btn-default.active{:type => "button"}
+                  %i.fa.fa-th
+                %button#toggle-list.btn.btn-default{:type => "button"}
+                  %i.fa.fa-list
+              %form.form-inline.order-by
+                .form-group
+                  %label Sort by:
+                .form-group
+                  %select.form-control
+                    %option{:selected => "selected"} Default
+                    %option Popularity
+                    %option Average rating
+                    %option Newness
+                    %option Price: low to high
+                    %option Price: high to low
+        #products.row.grid
+          = render 'food_item'
+          = render 'food_item'
+          = render 'food_item'
+          = render 'food_item'
+          = render 'food_item'
+          = render 'food_item'
+          = render 'food_item'
+          = render 'food_item'
+          = render 'food_item'
+          = render 'food_item'
+          = render 'food_item'
+          = render 'food_item'
+/
+  \==========================
+  PRODUCTS - END
+  \===========================
