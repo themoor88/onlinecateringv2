@@ -11,6 +11,9 @@
         = f.input :title, class: 'form-control',  label: "NAME"
     .row
       .col-md-6
+        = f.input :photo, class: 'form-control',  label: "PHOTO", as: :file
+    .row
+      .col-md-6
         = f.input :description, class: 'form-control',  label: "DESCRIPTION OF THE FOOD ITEM", as: :text, input_html: {'rows': 10}
     .row
       .col-md-6

@@ -11,7 +11,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'annotate'
-gem 'aws-sdk'
+gem 'aws-sdk', '< 2.0'
 gem 'bootstrap-sass'
 gem 'chronic'
 gem 'devise'

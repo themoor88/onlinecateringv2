@@ -21,7 +21,7 @@ class FoodItem < ActiveRecord::Base
 
   #------------------------------------------------------------------------------
   # Validations
-  validates_presence_of :allergy_information, :included, :description
+  validates_presence_of :included, :description
 
   #------------------------------------------------------------------------------
   # Associations
@@ -34,6 +34,7 @@ class FoodItem < ActiveRecord::Base
   }
 
   validates_attachment_content_type :photo, content_type: /\Aimage\/.*\Z/
+  validates_attachment_presence :photo
   #------------------------------------------------------------------------------
   # Enumerations
 
