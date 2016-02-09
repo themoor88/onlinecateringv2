@@ -1,27 +1,16 @@
-/
-  \==========================
-  PRODUCTS - START
-  \===========================
+/ \==========================
+/ PRODUCTS - START
+/ \===========================
 %section.content.products
   .container
     %h2.hidden Products
     .row
       .col-sm-12
         = link_to "Add a Food Item", new_vendors_food_item_path
+        %br
         #products.row.grid
-          = render 'food_item'
-          = render 'food_item'
-          = render 'food_item'
-          = render 'food_item'
-          = render 'food_item'
-          = render 'food_item'
-          = render 'food_item'
-          = render 'food_item'
-          = render 'food_item'
-          = render 'food_item'
-          = render 'food_item'
-          = render 'food_item'
-    /
-      \==========================
-      PRODUCTS - END
-      \===========================
+          - @food_items.each do |food_item|
+            = render partial: 'food_item', locals: {food_item: food_item}
+/ \==========================
+/ PRODUCTS - END
+/ \===========================

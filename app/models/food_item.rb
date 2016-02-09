@@ -21,7 +21,7 @@ class FoodItem < ActiveRecord::Base
 
   #------------------------------------------------------------------------------
   # Validations
-  validates_presence_of :included, :description
+  validates_presence_of :included, :description, :title
 
   #------------------------------------------------------------------------------
   # Associations
