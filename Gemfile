@@ -14,10 +14,11 @@ gem 'annotate'
 gem 'bootstrap-sass'
 gem 'chronic'
 gem 'devise'
+gem 'figaro'
 gem 'font-awesome-rails'
 gem 'haml-rails'
-gem 'simple_form'
 gem 'rails_12factor'
+gem 'simple_form'
 
 group :development, :test do
   gem 'byebug'
