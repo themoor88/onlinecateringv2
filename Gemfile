@@ -11,12 +11,14 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'annotate'
+gem 'aws-sdk'
 gem 'bootstrap-sass'
 gem 'chronic'
 gem 'devise'
 gem 'figaro'
 gem 'font-awesome-rails'
 gem 'haml-rails'
+gem 'paperclip'
 gem 'rails_12factor'
 gem 'simple_form'
 
