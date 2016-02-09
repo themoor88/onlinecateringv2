@@ -5,6 +5,10 @@
 #  id                     :integer          not null, primary key
 #  email                  :string(255)      default(""), not null
 #  encrypted_password     :string(255)      default(""), not null
+#  photo_updated_at       :datetime
+#  photo_file_size        :integer
+#  photo_content_type     :string(255)
+#  photo_file_name        :string(255)
 #  reset_password_token   :string(255)
 #  reset_password_sent_at :datetime
 #  remember_created_at    :datetime
@@ -29,6 +33,14 @@ class Vendor < ActiveRecord::Base
   # Associations
   has_many :food_items
   has_many :orders
+
+  has_attached_file :photo, styles: {
+    thumb: '100x100>',
+    square: '200x200#',
+    medium: '300x300>'
+  }
+
+  validates_attachment_content_type :photo, content_type: /\Aimage\/.*\Z/
   #------------------------------------------------------------------------------
   # Enumerations
 
