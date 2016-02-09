@@ -27,6 +27,7 @@ class Customer < ActiveRecord::Base
   #------------------------------------------------------------------------------
   # Associations
   has_many :orders
+  has_many :addresses
   #------------------------------------------------------------------------------
   # Enumerations
 

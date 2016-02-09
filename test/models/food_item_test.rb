@@ -7,6 +7,10 @@
 #  price               :integer
 #  allergy_information :text(65535)
 #  included            :text(65535)
+#  photo_updated_at    :datetime
+#  photo_file_size     :integer
+#  photo_content_type  :string(255)
+#  photo_file_name     :string(255)
 #  vendor_id           :integer
 #  created_at          :datetime         not null
 #  updated_at          :datetime         not null
