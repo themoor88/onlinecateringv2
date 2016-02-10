@@ -37,7 +37,7 @@ class Vendor < ActiveRecord::Base
 
   has_attached_file :photo, styles: {
     thumb: '100x100>',
-    square: '200x200#',
+    square: '200x200#\>',
     medium: '300x300>'
   }
 
