@@ -10,32 +10,17 @@
             #product-carousel
               .item
                 %img.img-responsive{:alt => "", :src => "assets/images/products/product-1.jpg"}/
-              .item
-                %img.img-responsive{:alt => "", :src => "assets/images/products/product-2.jpg"}/
-              .item
-                %img.img-responsive{:alt => "", :src => "assets/images/products/product-3.jpg"}/
-              .item
-                %img.img-responsive{:alt => "", :src => "assets/images/products/product-4.jpg"}/
         .col-xs-8
           .product-body
-            %h3 Fusce Aliquam
+            %h3= food_item.title
             %span.price
               %ins
-                %span.amount $30.00
+                %span.amount= food_item.price
             %ul.list-unstyled.product-info
-              %li
-                %span> ID
-                U-187423
-              %li
-                %span> Availability
-                In Stock
-              %li
-                %span> Brand
-                Esprit
               %li
                 %span> Tags
                 Dress, Black, Women
-            %p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut feugiat mauris eget magna egestas porta. Curabitur sagittis sagittis neque rutrum congue. Donec lobortis dui sagittis, ultrices nunc ornare, ultricies elit. Curabitur tristique felis pulvinar nibh porta.
+            %p= food_item.description
 /
   \==========================
   PRODUCTS - END
