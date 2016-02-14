@@ -10,18 +10,18 @@
           .product-carousel-wrapper
             #product-carousel
               .item
-                = image_tag ("example-9.jpg"), class: "img-responsive"
+                = image_tag (@food_item.photo(:medium)), class: "img-responsive"
         .col-xs-8
           .product-body
-            %h3 Fusce Aliquam
+            %h3= @food_item.title
             %span.price
               %ins
-                %span.amount $30.00
+                %span.amount= @food_item.price
             %ul.list-unstyled.product-info
               %li
                 %span> Tags
                 Dress, Black, Women
-            %p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut feugiat mauris eget magna egestas porta. Curabitur sagittis sagittis neque rutrum congue. Donec lobortis dui sagittis, ultrices nunc ornare, ultricies elit. Curabitur tristique felis pulvinar nibh porta.
+            %p= @food_item.description
             .product-form.clearfix
               .row.row-no-padding
                 .col-md-3.col-sm-4
@@ -49,10 +49,7 @@
     .releated-products
       %h2 Related Food
       #products.row.grid
-        = render 'food_item'
-        = render 'food_item'
-        = render 'food_item'
-        = render 'food_item'
+
 /
   \==========================
   PRODUCTS - END

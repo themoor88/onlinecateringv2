@@ -6,7 +6,7 @@
     %h2.hidden Products
     .row
       .col-sm-12
-        = link_to "Add a Food Item", new_vendors_food_item_path
+        = link_to "Add a Food Item", new_vendors_food_item_path, class: 'btn btn-primary'
         %br
         #products.row.grid
           - @food_items.each do |food_item|
