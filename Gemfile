@@ -10,6 +10,7 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
+gem 'acts-as-taggable-on', '~> 3.4'
 gem 'annotate'
 gem 'aws-sdk', '< 2.0'
 gem 'bootstrap-sass'
@@ -20,6 +21,7 @@ gem 'font-awesome-rails'
 gem 'haml-rails'
 gem 'paperclip'
 gem 'rails_12factor'
+gem "select2-rails"
 gem 'simple_form'
 
 group :development, :test do

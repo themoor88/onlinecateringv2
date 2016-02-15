@@ -6,37 +6,41 @@
   .container
     %h2.hidden Products
     .row
-      .col-sm-12
+      .col-md-12
         .products-header
           .row
-            .col-xs-6.col-sm-4
-              %form.form-inline.products-per-page
-                .form-group
-                  %label Show:
+            .col-sm-12.col-md-4
+              %form.form-group
                 .form-group
                   %select.form-control
-                    %option 6
-                    %option{:selected => "selected"} 12
-                    %option 18
-                    %option 24
-                    %option ALL
-            .col-xs-6.col-sm-8
-              .btn-group.toggle-list-grid.hidden-xs{:role => "group"}
-                %button#toggle-grid.btn.btn-default.active{:type => "button"}
-                  %i.fa.fa-th
-                %button#toggle-list.btn.btn-default{:type => "button"}
-                  %i.fa.fa-list
-              %form.form-inline.order-by
-                .form-group
-                  %label Sort by:
+                    %option San Francisco
+                    %option Toronto
+                    %option Vancouver
+                    %option Mississauga
+            .col-sm-12.col-md-2
+              %form.form-group
                 .form-group
                   %select.form-control
-                    %option{:selected => "selected"} Default
-                    %option Popularity
+                    = options_for_select(1..75)
+            .col-sm-12.col-md-2
+              %form.form-group
+                .form-group
+                  %select.form-control
+                    %option Event Date
                     %option Average rating
-                    %option Newness
                     %option Price: low to high
                     %option Price: high to low
+            .col-sm-12.col-md-2
+              %form.form-group
+                .form-group
+                  %select.form-control
+                    %option Event Time
+                    %option Average rating
+                    %option Price: low to high
+                    %option Price: high to low
+            .col-sm-12.col-md-2
+              = link_to 'Search', food_item_path(1), remote: true, class: 'btn btn-primary btn-search'
+
         #products.row.grid
           - @food_items.each do |food_item|
             = render partial: 'food_item', locals: {food_item: food_item}
