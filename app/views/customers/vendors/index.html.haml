@@ -8,8 +8,8 @@
     .row
       .col-sm-12
         #products.row.grid
-          = render 'vendor'
-          = render 'vendor'
+          - @vendors.each do |vendor|
+            = render partial: 'vendor', locals: {vendor: vendor}
 /
   \==========================
   PRODUCTS - END

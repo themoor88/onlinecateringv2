@@ -20,10 +20,8 @@
     .releated-products
       %h2 Vendor Food Items
       #products.row.grid
-        = render 'food_item'
-        = render 'food_item'
-        = render 'food_item'
-        = render 'food_item'
+        - @vendor.food_items.each do |food_item|
+          = render 'food_items/food_item'
 /
   \==========================
   PRODUCTS - END

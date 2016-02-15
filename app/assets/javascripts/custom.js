@@ -110,14 +110,6 @@ $(document).ready(function() {
     });
 
 	/*------------------------------
-		COMPARE TABLE
-	------------------------------*/
-	$('#table-compare').dragtable({
-		dragHandle:'.fa-arrows',
-		dragaccept:'.accept'
-	});
-
-	/*------------------------------
 		TOOLTIP INIT
 	------------------------------*/
 	$('.widget-color .checkbox label').tooltip();

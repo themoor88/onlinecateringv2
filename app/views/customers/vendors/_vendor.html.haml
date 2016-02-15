@@ -4,8 +4,8 @@
     .row
       .col-sm-3
         .product-overlay
-          = link_to '', customers_vendor_path(1), class: "product-permalink"
-          = image_tag ("example-1.jpg"), class: "img-responsive img-circle"
+          = link_to '', customers_vendor_path(vendor), class: "product-permalink"
+          = image_tag (vendor.photo(:medium)), class: "img-responsive img-circle"
       .col-sm-9
         .product-body.text-center
           %h3 Taste of Chine Noodle Box
