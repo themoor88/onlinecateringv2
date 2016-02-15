@@ -9,8 +9,11 @@
         = link_to "Add a Food Item", new_vendors_food_item_path, class: 'btn btn-primary'
         %br
         #products.row.grid
-          - @food_items.each do |food_item|
-            = render partial: 'food_item', locals: {food_item: food_item}
+          - if @food_items.present?
+            - @food_items.each do |food_item|
+              = render partial: 'food_item', locals: {food_item: food_item}
+          - else
+            %h1.add-food-item Please add some food items
 / \==========================
 / PRODUCTS - END
 / \===========================

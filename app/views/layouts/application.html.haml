@@ -85,8 +85,6 @@
                         %li
                           %a{:href => "my-account.html"} Account Details
                         %li
-                          %a{:href => "signup.html"} Cards
-                        %li
                           = link_to "Edit Password", edit_vendor_registration_path
                         %li= link_to "Logout", destroy_vendor_session_path, method: :delete
               - else
@@ -109,24 +107,24 @@
         NEWSLETTER - START
         \===========================
       %section.separator.separator-newsletter
-        .container
-          / .newsletter-left
-          /   .newsletter-badge
-          /     %span Subscribe
-          /     %span.price $15
-          /     %span discount
-          .newsletter-right
-            .row
-              .col-sm-6
-                .newsletter-body
-                  %h3 Newsletter
-                  %p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-              .col-sm-6
-                %form
-                  .input-group.input-group-lg
-                    %input.form-control{:placeholder => "Enter email address", :type => "email"}/
-                    %span.input-group-btn
-                      %button.btn.btn-primary{:type => "button"} Sign Up
+      /   .container
+      /     .newsletter-left
+      /       .newsletter-badge
+      /         %span Subscribe
+      /         %span.price $15
+      /         %span discount
+      /     .newsletter-right
+      /       .row
+      /         .col-sm-6
+      /           .newsletter-body
+      /             %h3 Newsletter
+      /             %p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+      /         .col-sm-6
+      /           %form
+      /             .input-group.input-group-lg
+      /               %input.form-control{:placeholder => "Enter email address", :type => "email"}/
+      /               %span.input-group-btn
+      /                 %button.btn.btn-primary{:type => "button"} Sign Up
       /
         \==========================
         NEWSLETTER - END

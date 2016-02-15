@@ -62,6 +62,6 @@ class Vendors::FoodItemsController < Vendors::BaseController
   private
     # Never trust parameters from the scary internet, only allow the white list through.
     def food_item_params
-      params.require(:food_item).permit(:title, :description, :allergy_information, :included, :photo)
+      params.require(:food_item).permit(:title, :description, :allergy_information, :included, :photo, :tag_list)
     end
 end
