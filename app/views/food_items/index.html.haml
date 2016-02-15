@@ -42,8 +42,11 @@
               = link_to 'Search', food_item_path(1), remote: true, class: 'btn btn-primary btn-search'
 
         #products.row.grid
-          - @food_items.each do |food_item|
-            = render partial: 'food_item', locals: {food_item: food_item}
+          - if @food_items.present?
+            - @food_items.each do |food_item|
+              = render partial: 'food_item', locals: {food_item: food_item}
+          - else
+            %h1.food-item-title.text-center There are no food items
 
 /
   \==========================

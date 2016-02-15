@@ -1,4 +1,4 @@
-class AddressesController < Customers::BaseController
+class Customers::AddressesController < Customers::BaseController
   # GET /customers/addresses
   def index
     @addresses = current_customer.addresses
@@ -11,7 +11,7 @@ class AddressesController < Customers::BaseController
 
   # GET /customers/addresses/new
   def new
-    @address = Address.new
+    @address = current_customer.addresses.new
   end
 
   # GET /customers/addresses/1/edit
@@ -21,7 +21,7 @@ class AddressesController < Customers::BaseController
 
   # POST /customers/addresses
   def create
-    @address = Address.new(address_params)
+    @address = current_customer.addresses.new(address_params)
 
     respond_to do |format|
       if @address.save
@@ -63,6 +63,6 @@ class AddressesController < Customers::BaseController
   private
     # Never trust parameters from the scary internet, only allow the white list through.
     def address_params
-      params.require(:address).permit()
+      params.require(:address).permit(:city, :country, :street_name)
     end
 end

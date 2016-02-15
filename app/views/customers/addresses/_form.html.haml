@@ -1,10 +1,19 @@
-= form_for @address, url: customers_address_path(@address) do |f|
+= simple_form_for @address, url: customers_addresses_path(@address) do |f|
   - if @address.errors.any?
     #error_explanation
       %h2= "#{pluralize(@address.errors.count, "error")} prohibited this customers_address from being saved:"
       %ul
         - @address.errors.full_messages.each do |msg|
           %li= msg
-
+  .row
+    .col-md-6
+      = f.input :city, class: 'form-control',  label: "CITY"
+  .row
+    .col-md-6
+      = f.input :country, class: 'form-control',  label: "COUNTRY", as: :text
+  .row
+    .col-md-6
+      = f.input :street_name, class: 'form-control',  label: "ADDRESS LINE 1"
+  %br
   .actions
-    = f.submit 'Save'
+    = f.submit 'Save', class: 'btn btn-primary btn-lg'

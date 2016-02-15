@@ -8,8 +8,11 @@
     .row
       .col-sm-12
         #products.row.grid
-          - @vendors.each do |vendor|
-            = render partial: 'vendor', locals: {vendor: vendor}
+          - if @vendors.present?
+            - @vendors.each do |vendor|
+              = render partial: 'vendor', locals: {vendor: vendor}
+          - else
+            %h1.vendor-title.text-center There are no vendors
 /
   \==========================
   PRODUCTS - END

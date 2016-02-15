@@ -1,19 +1,32 @@
-%h1 Listing customers_addresses
+%section.content.account
+  .container
+    .row
+      .col-sm-12
+        %article.account-content
+          %h3 My Addresses
+          - if @addresses.present?
+            .table-responsive.border
+              %table.table.table-bordered
+                %tr
+                  %th Company
+                  %th Name
+                  %th Address
+                  %th Country
+                  %th Phone
+                  %th
+                %tr
+                  %td Microsoft Corporation
+                  %td John Doe
+                  %td 16, Main street 2nd floor 33133 Miami
+                  %td United States
+                  %td +420 123 456 789
+                  %td
+                    %a.btn.btn-primary.btn-sm
+                      %i.fa.fa-pencil
+                    %a.btn.btn-primary.btn-sm
+                      %i.fa.fa-times
+          - else
+            %h1.text-center You have no addresses
+          = link_to new_customers_address_path, class: "btn btn-primary" do
+            %i.fa.fa-plus-circle Add New Address
 
-%table
-  %thead
-    %tr
-      %th
-      %th
-      %th
-
-  %tbody
-    - @addresses.each do |address|
-      %tr
-        %td= link_to 'Show', customers_address
-        %td= link_to 'Edit', edit_customers_address_path(address)
-        %td= link_to 'Destroy', customers_address, method: :delete, data: { confirm: 'Are you sure?' }
-
-%br
-
-= link_to 'New Address', new_customers_address_path
