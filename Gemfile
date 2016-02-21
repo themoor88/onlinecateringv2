@@ -22,8 +22,10 @@ gem 'haml-rails'
 gem 'paperclip'
 gem 'rails_12factor'
 gem "select2-rails"
+gem 'sidekiq'
 gem 'simple_form'
 gem 'state_machine'
+
 
 group :development, :test do
   gem 'byebug'
