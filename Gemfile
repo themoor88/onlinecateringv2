@@ -21,6 +21,7 @@ gem 'font-awesome-rails'
 gem 'geocoder'
 gem 'haml-rails'
 gem 'paperclip'
+gem 'page_title_helper'
 gem 'rails_12factor'
 gem "select2-rails"
 gem 'sidekiq'
