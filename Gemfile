@@ -27,6 +27,7 @@ gem "select2-rails"
 gem 'sidekiq'
 gem 'simple_form'
 gem 'state_machine'
+gem 'stripe'
 
 
 group :development, :test do
