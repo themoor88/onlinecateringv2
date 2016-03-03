@@ -11,6 +11,9 @@ Rails.application.routes.draw do
   get "/food-items/:id" => 'food_items#show', as: 'food_item'
   get "/search" => 'food_items#index'
 
+  authenticate :admin do
+    mount Sidekiq::Web => '/sidekiq'
+  end
 
   devise_for :customers, controllers: {
     registrations: 'customers/custom_devise/registrations',
