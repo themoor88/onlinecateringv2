@@ -35,6 +35,7 @@ group :development, :test do
   gem 'pry-rails'
   gem 'better_errors'
   gem 'erb2haml'
+  gem "capistrano", "~> 3.4"
 end
 
 group :development do
