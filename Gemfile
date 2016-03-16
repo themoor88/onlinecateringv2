@@ -22,20 +22,20 @@ gem 'haml-rails'
 gem 'paperclip'
 gem 'page_title_helper'
 gem 'rails_12factor'
-gem "select2-rails"
+gem 'select2-rails'
 gem 'sidekiq'
 gem 'simple_form'
 gem 'state_machine'
 gem 'stripe'
 
-
 group :development, :test do
+  gem 'rubocop', require: false
   gem 'byebug'
   gem 'quiet_assets'
   gem 'pry-rails'
   gem 'better_errors'
   gem 'erb2haml'
-  gem "capistrano", "~> 3.4"
+  gem 'capistrano', '~> 3.4'
 end
 
 group :development do

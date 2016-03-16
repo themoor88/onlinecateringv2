@@ -36,8 +36,9 @@ class Customers::OrdersController < Customers::BaseController
   end
 
   private
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def order_params
-      params.require(:order).permit()
-    end
+
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def order_params
+    params.require(:order).permit
+  end
 end

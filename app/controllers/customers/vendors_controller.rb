@@ -1,5 +1,4 @@
 class Customers::VendorsController < Customers::BaseController
-
   # GET /index
   def index
     @vendors = Vendor.all
@@ -11,5 +10,4 @@ class Customers::VendorsController < Customers::BaseController
   end
 
   private
-
 end

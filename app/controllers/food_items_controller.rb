@@ -1,5 +1,4 @@
 class FoodItemsController < ApplicationController
-
   # GET /search
   def index
     @food_items = FoodItem.all
@@ -11,5 +10,4 @@ class FoodItemsController < ApplicationController
   end
 
   private
-
 end

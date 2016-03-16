@@ -5,41 +5,41 @@ class Vendors::FooditemsControllerTest < ActionController::TestCase
     @vendors_fooditem = vendors_fooditems(:one)
   end
 
-  test "should get index" do
+  test 'should get index' do
     get :index
     assert_response :success
     assert_not_nil assigns(:vendors_fooditems)
   end
 
-  test "should get new" do
+  test 'should get new' do
     get :new
     assert_response :success
   end
 
-  test "should create vendors_fooditem" do
+  test 'should create vendors_fooditem' do
     assert_difference('Vendors::Fooditem.count') do
-      post :create, vendors_fooditem: {  }
+      post :create, vendors_fooditem: {}
     end
 
     assert_redirected_to vendors_fooditem_path(assigns(:vendors_fooditem))
   end
 
-  test "should show vendors_fooditem" do
+  test 'should show vendors_fooditem' do
     get :show, id: @vendors_fooditem
     assert_response :success
   end
 
-  test "should get edit" do
+  test 'should get edit' do
     get :edit, id: @vendors_fooditem
     assert_response :success
   end
 
-  test "should update vendors_fooditem" do
-    patch :update, id: @vendors_fooditem, vendors_fooditem: {  }
+  test 'should update vendors_fooditem' do
+    patch :update, id: @vendors_fooditem, vendors_fooditem: {}
     assert_redirected_to vendors_fooditem_path(assigns(:vendors_fooditem))
   end
 
-  test "should destroy vendors_fooditem" do
+  test 'should destroy vendors_fooditem' do
     assert_difference('Vendors::Fooditem.count', -1) do
       delete :destroy, id: @vendors_fooditem
     end

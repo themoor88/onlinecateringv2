@@ -61,8 +61,9 @@ class Customers::AddressesController < Customers::BaseController
   end
 
   private
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def address_params
-      params.require(:address).permit(:city, :country, :street_name)
-    end
+
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def address_params
+    params.require(:address).permit(:city, :country, :street_name)
+  end
 end

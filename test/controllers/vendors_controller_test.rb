@@ -5,41 +5,41 @@ class VendorsControllerTest < ActionController::TestCase
     @vendor = vendors(:one)
   end
 
-  test "should get index" do
+  test 'should get index' do
     get :index
     assert_response :success
     assert_not_nil assigns(:vendors)
   end
 
-  test "should get new" do
+  test 'should get new' do
     get :new
     assert_response :success
   end
 
-  test "should create vendor" do
+  test 'should create vendor' do
     assert_difference('Vendor.count') do
-      post :create, vendor: {  }
+      post :create, vendor: {}
     end
 
     assert_redirected_to vendor_path(assigns(:vendor))
   end
 
-  test "should show vendor" do
+  test 'should show vendor' do
     get :show, id: @vendor
     assert_response :success
   end
 
-  test "should get edit" do
+  test 'should get edit' do
     get :edit, id: @vendor
     assert_response :success
   end
 
-  test "should update vendor" do
-    patch :update, id: @vendor, vendor: {  }
+  test 'should update vendor' do
+    patch :update, id: @vendor, vendor: {}
     assert_redirected_to vendor_path(assigns(:vendor))
   end
 
-  test "should destroy vendor" do
+  test 'should destroy vendor' do
     assert_difference('Vendor.count', -1) do
       delete :destroy, id: @vendor
     end
